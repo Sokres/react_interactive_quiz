@@ -1,0 +1,152 @@
+:root {
+  --color-link: #3d6cd1;
+  --color-link-hover: #89a6e3;
+  --color-white: #f6f5f5;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+body {
+  display: flex;
+  margin: 0 auto;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 2px solid var(--color-link);
+  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.btn:hover {
+  border-color: var(--color-link-hover);
+}
+
+.btn:focus,
+.btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* стили для авторизации */
+
+.auth {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px var(--color-link-hover);
+}
+
+.auth__title {
+  text-align: center;
+}
+
+.auth__form {
+  display: grid;
+  gap: 10px;
+}
+
+.authNameInput {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--color-link);
+  padding: 0.6em 1.2em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+
+  &:focus,
+  &:active {
+    border-color: var(--color-link-hover);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(48, 65, 220, 0.5);
+  }
+}
+
+.auth__btn {
+  justify-self: start;
+}
+.auth__link-reg{
+  display: flex;
+  justify-content: space-between;
+}
+/* -------------------- */
+/* Qestions */
+.question{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.question__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.question__item{
+  width: calc(33% - 30px);
+  margin: 10px 15px;
+}
+.item-test{
+  padding: 20px;
+  border-radius: 20px;
+  color: var(--color-white);
+  background: linear-gradient(120deg, #60abd5 0%, #5687e4 100%);
+}
+.item-test__title{
+  margin: 0;
+}
+.item-test__btn{
+  border-color: var(--color-white);
+  color: var(--color-white); 
+}
+/* ----------- */
+#root {
+  display: grid;
+  width: 100%;
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
