@@ -4,7 +4,6 @@ import { TEST_ROUTE } from './AppRouter';
 
 const QestionItem = ({test}) => {
     const navigate = useNavigate();
-    console.log(navigate);
     return (
         <li className="question__item item-test">
             <h2 className="item-test__title">{test.title}</h2>

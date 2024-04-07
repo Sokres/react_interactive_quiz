@@ -7,7 +7,9 @@
   font-weight: 400;
 
 }
-
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 a {
   font-weight: 500;
   color: var(--color-link);
@@ -23,6 +25,9 @@ body {
   margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -94,41 +99,118 @@ h1 {
 .auth__btn {
   justify-self: start;
 }
-.auth__link-reg{
+
+.auth__link-reg {
   display: flex;
   justify-content: space-between;
 }
+
 /* -------------------- */
 /* Qestions */
-.question{
+.question {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 50px;
 }
-.question__list{
+
+.question__list {
   list-style: none;
   margin: 0;
   padding: 0;
+  // display: flex;
+  // flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+
 }
-.question__item{
-  width: calc(33% - 30px);
-  margin: 10px 15px;
+
+.question__item {
+  margin: 10px;
+  width: calc(33.33% - 20px);
 }
-.item-test{
+
+.item-test {
   padding: 20px;
   border-radius: 20px;
   color: var(--color-white);
   background: linear-gradient(120deg, #60abd5 0%, #5687e4 100%);
 }
-.item-test__title{
+
+.item-test__title {
   margin: 0;
 }
-.item-test__btn{
+
+.item-test__btn {
   border-color: var(--color-white);
-  color: var(--color-white); 
+  color: var(--color-white);
 }
+
+/* ----------- */
+
+
+/* Test page */
+
+.test-page {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.conteiner-test__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.container-test__item {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: linear-gradient(120deg, #60abd5 0%, #5687e4 100%);
+  color: var(--color-white);
+
+}
+
+.container-test_box-question {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(120deg, #60abd5 0%, #5687e4 100%);
+  color: var(--color-white);
+}
+
+.container-test__question {
+  font-size: 18px;
+}
+
+.container-test__list-question {
+  display: grid;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+.container-test__item-question {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
 /* ----------- */
 #root {
   display: grid;

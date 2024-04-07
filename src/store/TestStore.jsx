@@ -17,7 +17,55 @@ export default class UserStore {
                     { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
                     { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
                 ]
-            }
+            },
+            {
+                id: 2, title: 'По математике', description:'Описание теста нужно добавить в создание', test: [
+                    { title: '1.  2 + 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '2.  4 - 2', answer: ['2', '9', '1', '4'], result: 0 },
+                    { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
+                ]
+            },
+            {
+                id: 2, title: 'По математике', description:'Описание теста нужно добавить в создание', test: [
+                    { title: '1.  2 + 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '2.  4 - 2', answer: ['2', '9', '1', '4'], result: 0 },
+                    { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
+                ]
+            },
+            {
+                id: 2, title: 'По математике', description:'Описание теста нужно добавить в создание', test: [
+                    { title: '1.  2 + 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '2.  4 - 2', answer: ['2', '9', '1', '4'], result: 0 },
+                    { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
+                ]
+            },
+            {
+                id: 2, title: 'По математике', description:'Описание теста нужно добавить в создание', test: [
+                    { title: '1.  2 + 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '2.  4 - 2', answer: ['2', '9', '1', '4'], result: 0 },
+                    { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
+                ]
+            },
+            {
+                id: 2, title: 'По математике', description:'Описание теста нужно добавить в создание', test: [
+                    { title: '1.  2 + 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '2.  4 - 2', answer: ['2', '9', '1', '4'], result: 0 },
+                    { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
+                ]
+            },
+            {
+                id: 2, title: 'По математике', description:'Описание теста нужно добавить в создание', test: [
+                    { title: '1.  2 + 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '2.  4 - 2', answer: ['2', '9', '1', '4'], result: 0 },
+                    { title: '3.  2 * 2', answer: ['3', '1', '10', '4'], result: 3 },
+                    { title: '4.  6 / 2', answer: ['3', '1', '10', '4'], result: 0 },
+                ]
+            },
         ]
         makeAutoObservable(this)
     }
