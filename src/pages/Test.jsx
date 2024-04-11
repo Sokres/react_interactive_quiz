@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
+import {Context} from '../main'
 import tick from '../img/tick.svg'
 import PassingTest from '../components/PassingTest';
 import ResultTest from '../components/ResultTest';
 
 const Test = () => {
+    const { test } = useContext(Context)
+    console.log(test);
     const questions = [{ id: 1, title: '1.	We  ___ good people. ', answer: ['are', 'be', 'is', 'Если не знаешь ответ, но хочешь выбрать наугад, нажми сюда'], result: 0 },
     { id: 2, title: '2.__________ two sons. ', answer: ['she have', 'she is', 'she get', 'she has got', 'Если не знаешь ответ, но хочешь выбрать наугад, нажми сюда'], result: 0 },
     { id: 3, title: '3.Mary _________ like basketball.', answer: ['doesnt', 'not dont', 'do not', 'Если не знаешь ответ, но хочешь выбрать наугад, нажми сюда'], result: 0 },
@@ -40,6 +43,7 @@ const Test = () => {
 
 
             </div>
+            
         </section>
     );
 };

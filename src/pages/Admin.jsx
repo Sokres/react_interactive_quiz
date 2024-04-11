@@ -7,18 +7,19 @@ const Admin = () => {
         e.preventDefault()
         setQuestionLes([...questionLes, ''])
     }
-    const [dataFromChild, setDataFromChild] = useState([]);
+    // Состояние для хранения данных из дочерних компонентов
+  const [childDataCollection, setChildDataCollection] = useState([]);
 
-    // Функция обратного вызова, которая будет вызываться из дочернего компонента
-    const handleDataFromChild = (data) => {
-      setDataFromChild(prevData => [...prevData, data]);
-    };
+  // Функция для обработки данных из дочерних компонентов
+  const handleChildData = (data) => {
+    setChildDataCollection(prevData => [...prevData, data]);
+  };
 
-    // Обработчик нажатия кнопки в родительском компоненте
-    const handleButtonClick = () => {
-      // Действия с данными из дочернего компонента
-      console.log('Данные из дочернего компонента:', dataFromChild);
-    };
+  // Обработчик нажатия кнопки в родительском компоненте
+  const handleButtonClick = () => {
+    // Выполняем необходимые действия с данными из всех дочерних компонентов
+    console.log('Данные из дочерних компонентов:', childDataCollection);
+  };
     
     // Обработчик отправки формы
     const handleSubmit = (event) => {
@@ -33,7 +34,7 @@ const Admin = () => {
             {
                 questionLes.map((el, i) => (
                     <div key={i}>
-                        <QuestionLess onDataFromChild={handleDataFromChild} />
+                        <QuestionLess onChildData={handleChildData} />
                     </div>
                 )
                 )

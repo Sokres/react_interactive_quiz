@@ -1,52 +1,64 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const QuestionLess = ({onDataFromChild}) => {
-    const [inputValues, setInputValues] = useState(['']);
-    const [inputRadioValues, setInputRadioValues] = useState(0);
-    // Функция для добавления нового input поля
-    const addInputField = () => {
-        if (inputValues.length <= 3) {
-            setInputValues([...inputValues, '']);
+const QuestionLess = ({ onChildData }) => {
+  const [question, setQuestion] = useState('');
+  const [answers, setAnswers] = useState(['']);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(0);
 
-        }
-    };
-    const handleChangeRadio = (e) => {
-        setInputRadioValues(e.target.value);
-    };
-    // Обработчик изменения значения ввода для конкретного input поля
-    const handleChange = (index, event) => {
-        const newInputValues = [...inputValues];
-        newInputValues[index] = event.target.value;
-        setInputValues(newInputValues);
-    };
-    // useEffect(() => {
-    //     onDataFromChild(inputValues);
-    // }, [inputValues]);
-    onDataFromChild(inputValues)
-    console.log(inputValues);
-    return (
-        <div>
-            <label>
-                Название вопроса
-                <input type="text" name="input1" />
-            </label>
-            {inputValues.map((value, index) => (
-                <div key={index}>
-                    <label>
-                        Введите текст:
-                        {/* Управляемый input */}
-                        <input
-                            type="text"
-                            value={value}
-                            onChange={(event) => handleChange(index, event)}
-                        />
-                    </label>
-                    <input value={index} onChange={handleChangeRadio} type="radio" name="radio" />
-                </div>
-            ))}
-            <button type="button" onClick={addInputField}>Добавить Ответ</button>
+  const addAnswer = () => {
+    if (answers.length <= 3) {
+      setAnswers([...answers, '']);
+    }
+  };
+
+  const handleAnswerChange = (index, event) => {
+    const newAnswers = [...answers];
+    newAnswers[index] = event.target.value;
+    setAnswers(newAnswers);
+  };
+
+  const handleRadioChange = (event) => {
+    setSelectedAnswerIndex(Number(event.target.value));
+  };
+
+  const handleNextQuestionClick = (event) => {
+    event.preventDefault();
+    onChildData({ question, answers, selectedAnswerIndex });
+  };
+
+  return (
+    <div>
+      <label>
+        Название вопроса
+        <input 
+          type="text" 
+          value={question} 
+          onChange={(event) => setQuestion(event.target.value)} 
+          name="questionInput" 
+        />
+      </label>
+      {answers.map((value, index) => (
+        <div key={index}>
+          <label>
+            Введите текст:
+            <input
+              type="text"
+              value={value}
+              onChange={(event) => handleAnswerChange(index, event)}
+            />
+          </label>
+          <input 
+            type="radio" 
+            value={index}
+            onChange={handleRadioChange} 
+            name="answerRadio" 
+          />
         </div>
-    );
+      ))}
+      <button type="button" onClick={addAnswer}>Добавить Ответ</button>
+      <button type="button" onClick={handleNextQuestionClick}>Следующий вопрос</button>
+    </div>
+  );
 }
 
 export default QuestionLess;
